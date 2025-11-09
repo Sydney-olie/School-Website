@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}My Website{% endblock %}</title>
+  <link href="static/style.css" rel="stylesheet" >
+</head>
+<body>
+  <header>
+    <nav>
+    <ul>
+
+      <li><a id="home" href="/">Home</a></li>
+      <li><a id="signUp" href="/signup">Sign Up</a></li>
+      <li><a id="login" href="/login">Login</a></li>
+      <li><a id="logout" href="/logout">Logout</a></li>
+      <li><a id="contact" href="/contact">Contact Us</a></li>
+        
+    </ul>
+    </nav>
+  </header>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == 'error' %}
+<div role="alert" class="alert alert-danger">
+{{ message }}
+<button type="button" data-dismiss="alert">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% else %}
+<div role="alert" class="alert alert-success">
+  {{ message }}
+  <button type="button" data-dismiss="alert">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  {% endif %}
+{% endfor%}
+{%endif%}
+{% endwith %}
+  <div>
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,245 @@
+body {
+    background-color: #f0f0f0;
+    font-family:sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  
+  header {
+    background-color: rgb(100, 3, 60);
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .form-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 30px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 50px;
+  }
+  
+  .form-box h2 {
+    text-align: center;
+    color: rgb(124, 14, 78);
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .btn {
+    background-color: rgb(100, 3, 60);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .btn:hover {
+    background-color: #990066;
+  }
+  
+  footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #555;
+  }
+
+  * Center the main title and paragraph */
+h1, p {
+    text-align: center;
+}
+
+/* Container for all the cards */
+.explore-container {
+    display: flex;
+    flex-wrap: wrap;           /* makes items move to new line if too many */
+    justify-content: center;   /* centers them */
+    gap: 20px;                 /* space between each card */
+    margin-top: 20px;
+}
+
+/* Each individual card */
+.explore-card {
+    width: 200px;              /* fixed width */
+    text-align: center;
+    border: 1px solid #ccc;    /* light border */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Card hover effect */
+.explore-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Images inside the cards */
+.explore-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text link styling */
+.explore-card p {
+    margin-top: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.explore-card a {
+    text-decoration: none;
+}
+
+.explore-card a:hover p {
+    text-decoration: underline;
+}
+
+.image-section {
+  width: 90%;
+  max-width: 900px;    /* limits width for large screens */
+  margin: 0 auto;      /* centers section on page */
+  text-align: center;  /* centers text */
+  padding: 20px;
+}
+
+.image-section img {
+  width: 90%;         /* makes image fit page width */
+  height: 355px;        /* keeps aspect ratio */
+  border-radius: 10px; /* optional: rounded edges */
+  object-fit: cover;
+  margin-bottom: 15px; /* space below image */
+}
+
+.image-section .text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+@media (max-width: 500px) {
+  .image-section img {
+    height: 200px;
+  }
+}
+/* Header Background with Blur */
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: url("{{ url_for('static', filename='IMG_20251101_093834_536.jpg') }}") no-repeat center center/cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blur + dark overlay */
+.hero-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* School logo positioning */
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  z-index: 2;
+}
+
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+/* Overlay text styling */
+.overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color:white;
+  padding: 0 20px;
+}
+
+.overlay h1 {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.overlay p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .hero-header {
+    height: 250px;
+  }
+
+  .logo img {
+    height: 85px;
+  }
+
+  .overlay h1 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Nursery{% endblock %}
+
+{% block content %}
+<div class="form-box">
+    <div class="image-section">
+    <img src="{{ url_for('static', filename='IMG_20240919_112920_887.JPG') }}" alt="Nursery Section">
+    <div class="text">
+    <p> At Kings and Queens School, our Nursery Section provides a safe, joyful, and stimulating environment where every child begins their learning journey with confidence and curiosity. We understand that early childhood is a crucial stage in a child’s development.
+  </p>
+  </div>
+    </div>
+</div>
+<div class="form-box">
+    <div class="image-section">
+    <img src="{{ url_for('static', filename='IMG_20250130_082559_757.JPG') }}" alt="Nursery Section">
+    <div class="text">
+    <p>so we focus on nurturing their emotional, social, and cognitive growth through play-based and hands-on learning experiences. Guided by our motto — “Qualitative Education” — we ensure that every little king and queen receives the best start, building the right foundation for future academic success and lifelong love for learning.
+    </p>
+    </div>
+ </div>
+</div>
+{% endblock content%}

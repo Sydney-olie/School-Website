@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<title>Explore Kings and Queens School</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+<header class="hero-header" style="background-image:url('{{ url_for('static', filename='IMG_20251101_093834_536.jpg') }}');">
+    <div class="logo">
+        <img src= "{{ url_for('static', filename='file_0000000051a8620a8e2cce67cac70511.png') }}" alt="school logo">
+    </div>
+    <div class="overlay">
+        <h1>Kings and Queens School Asaba: </h1> <p>Where quality education that builds confidence that empowers every child to become leaders of tomorrow.</p>
+
+    </div>
+</header>
+<body>
+
+
+<p>Explore the different sections of our school.</p>
+
+<div class="explore-container">
+
+    <div class="explore-card">
+        <a href="/nursery">
+            <img src="{{ url_for('static', filename='IMG_20240919_112920_887.JPG') }}" alt="Nursery Section">
+            <p>Our Nursery Section</p>
+        </a>
+    </div>
+
+    <div class="explore-card">
+        <a href="/primary">
+            <img src="{{ url_for('static', filename='IMG_20240919_101202_215.JPG') }}" alt="Primary Section">
+            <p>Our Primary Section</p>
+        </a>
+    </div>
+
+    <div class="explore-card">
+        <a href="/secondary">
+            <img src="{{ url_for('static', filename='IMG_20240918_081940_348.jpg') }}" alt="Secondary Section">
+            <p>Our Secondary Section</p>
+        </a>
+    </div>
+
+    <div class="explore-card">
+        <a href="/skills">
+            <img src="{{ url_for('static', filename='IMG_20241118_100553_539.jpg') }}" alt="Extracurricular Activities">
+            <p>Extracurricular Activities/skill Acquisition</p>
+        </a>
+    </div>
+
+    <div class="explore-card">
+        <a href="/graduation">
+            <img src="{{ url_for('static', filename='Screenshot_20251029-175627.jpg') }}" alt="Graduation Party">
+            <p>Graduation Ceremony</p>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
