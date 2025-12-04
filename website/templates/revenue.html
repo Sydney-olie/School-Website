@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Revenue{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    <label>Amount to be paid per student:</label>
+    <input type="number" name="amount" required>
+    <button type="submit">Calculate</button>
+</form>
+
+{% if estimated_income %}
+<h3>Summary</h3>
+<p>Total Students: {{ total_students }}</p>
+<p>Amount per Student: #{{ amount_per_student }}</p>
+<p>Estmated income: #{{ estimated_income }}</p>
+<p>Amount collected: #{{ collected_amount }}</p>
+<p>Outstanding : #{{ outstanding_amount }}</p>
+{% endif %}
+
+
+{% endblock content %}

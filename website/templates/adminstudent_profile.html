@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/style.css" rel="stylesheet" >
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        .profile-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .profile-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .profile-field {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background: rgb(100, 3, 60);
+            color: white;
+        }
+
+        h3 {
+            margin-top: 40px;
+        }
+
+        nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: rgb(100, 3, 60);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .footer {
+  background-color: rgb(100, 3, 60);;    /* dark background */
+  color: #fff;               /* white text */
+  width: 100%;               /* make it stretch across the full page width */
+  padding: 30px 0;           /* add some top and bottom space */
+  text-align: center;        /* center everything horizontally */
+  position: relative;        /* keep it normal unless you want it fixed */
+  left: 0;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo {
+  width: 45px;
+  height: auto;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.footer-writing {
+  position: absolute;
+  top: 15px;
+  left: 75px;
+  z-index: 2;
+}
+
+.footer-links a {
+  color: #ccc;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+
+       </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a id="home" href="/">Home</a></li>
+      <li><a id="signUp" href="/signup">Sign Up</a></li>
+      <li><a id="login" href="/login">Login</a></li>
+      <li><a id="logout" href="/logout">Logout</a></li>
+      <li><a id="contact" href="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Student Details Box -->
+    <div class="profile-box">
+        <div class="profile-title">Student Profile</div>
+
+        <p class="profile-field"><strong>Full Name:</strong> {{ user.name }}</p>
+        <p class="profile-field"><strong>Phone Number:</strong> {{ user.phone }}</p>
+        <p class="profile-field"><strong>Email Address:</strong> {{ user.email }}</p>
+        <p class="profile-field"><strong>Class:</strong> {{ user.class_level }}</p>
+        <p class="profile-field"><strong>Student ID:</strong> {{ user.student_id }}</p>
+    </div>
+
+    <hr>
+
+    <!-- Payment History -->
+    <h3>Payment History</h3>
+
+    {% if payments %}
+        <table>
+            <tr>
+                <th>Amount Paid</th>
+                <th>Date Paid</th>
+                <th>Balance</th>
+            </tr>
+
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.amount_paid }}</td>
+                <td>{{ payment.date_paid }}</td>
+                <td>{{ payment.balance }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No payments have been recorded for this student.</p>
+    {% endif %}
+
+    <br><br>
+
+    <div class="profile-box">
+      <div class="profile-title">Notice Board</div>
+
+      <p class="profile-field"><strong>Notice:</strong> {{ calender.content }}</p>
+      </div>
+
+  <p><a href="/payment">Make payments</p></a>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <img src= "{{ url_for('static', filename='file_0000000051a8620a8e2cce67cac70511.png') }}" alt="school logo" class="footer-logo">
+      </div>
+      <p class="footer-writing">Kings And Queens School Asaba</p>
+      <br><br>
+    
+      <div class="footer-links">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacypolicy">Privacy Policy</a>
+      </div>
+    </div>
+        <p> Website created by Chineye Olie &copy; 2025</p>
+      </footer>
+
+
+</body>
+</html>

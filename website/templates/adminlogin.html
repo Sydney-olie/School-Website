@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <div class="form-box">
+    <h2>Login For Admin</h2>
+    <form action="/admin" method="POST">
+    
+
+
+      <label for="admin_id">Admin Code:</label>
+      <input type="admin_id" id="admin_id" name="admin_id" placeholder="Enter the admin code" required>
+
+      <label for="admin_password">Password:</label>
+      <input type="admin_password" id="admin_password" name="admin_password" placeholder="Enter your password" required>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+    <p>Don't have an account? <a id="admin_signup" href="/adminsignup">Sign Up</a> for an admin account</p>
+
+
+  
+{% endblock %}

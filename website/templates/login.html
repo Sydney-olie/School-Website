@@ -2,18 +2,20 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+<form action="/login" method="POST">
   <div class="form-box">
-    <h2>Login to Your Account</h2>
-    <form method="POST">
+    <h2 align="center">Login to Your Student Account</h2>
     
+<label for="student_id">Student ID:</label>
+<input type="student_id" id="student_id" name="student_id" placeholder="Enter your Student ID" required>
 
-
-      <label for="student_id">Student ID:</label>
-      <input type="student_id" id="student_id" name="student_id" placeholder="Enter your Student ID" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" placeholder="Enter your password" required>
 
       <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+      <p>Login to <a id="login_admin" href="/admin">admin</a> account</p>
+    
 
 {% endblock %}

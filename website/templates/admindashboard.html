@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>
+        Admin Dashboard
+
+        <form action="/search" method="GET"> <input type="text" name="student_id" placeholder="Enter Student ID or Name">
+            <button type="submit">Search</button>
+            </form>
+
+        {% if students %}
+    <h3>Search Results:</h3>
+    <ul>
+        {% for student in students %}
+  
+        {% endfor %}
+    </ul>
+{% elif query %}
+    <p>No student found for "{{ query }}".</p>
+{% endif %}
+    </h1>
+
+    </div>
+
+  
+      <div class="button-container">
+        
+        <button class="big-btn"><a href="/adminpayments">Update Student's payment</a> </button>
+        <button class="big-btn"><a href="/admincalendar">Add Notice</a> </button>
+        <button class="big-btn"><a href="/revenue">Termly Revenue</a> </button>
+        <button class="big-btn"><a href="/accountdetails">Add Account Details</a> </button>
+        <button class="big-btn"><a href="/logout">Logout </a> </button>
+      </div>
+
+
+<hr>
+
+
+</div>
+</form>
+
+  </body>
+  {% endblock content %}

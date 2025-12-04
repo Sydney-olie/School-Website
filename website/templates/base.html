@@ -10,6 +10,7 @@
   <header>
     <nav>
     <ul>
+      
 
       <li><a id="home" href="/">Home</a></li>
       <li><a id="signUp" href="/signup">Sign Up</a></li>
@@ -46,8 +47,20 @@
     {% endblock %}
   </div>
 
-  <footer>
-    <p>&copy; 2025 My Website. All rights reserved.</p>
+  <footer class="footer">
+    <div class="footer-content">
+      <img src= "{{ url_for('static', filename='file_0000000051a8620a8e2cce67cac70511.png') }}" alt="school logo" class="footer-logo">
+  </div>
+  <p class="footer-writing">Kings And Queens School Asaba</p>
+  <br><br>
+
+  <div class="footer-links">
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/privacypolicy">Privacy Policy</a>
+  </div>
+</div>
+    <p> Website created by Chineye Olie &copy; 2025</p>
   </footer>
 </body>
 </html>

@@ -20,10 +20,12 @@ def create_app():
     from .views import views
     from .auth import auth
     from .contact import contact_bp
+    from .input import input
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(contact_bp, url_prefix='/')
+    app.register_blueprint(input, url_prefix='/')
     
     db.init_app(app)
     
