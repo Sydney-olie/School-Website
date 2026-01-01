@@ -3,11 +3,18 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from .models import Admin
+import os
+from dotenv import load_dotenv
+
+
+
+load_dotenv()
+
 
 
 auth = Blueprint('auth', __name__)
-SCHOOL_ID = "211"
-SCHOOL_CODE="KQ557892"
+SCHOOL_ID = os.getenv("SCHOOL_ID")
+SCHOOL_CODE= os.getenv("SCHOOL_CODE")
     
 
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -137,7 +144,7 @@ def adminsignup():
         flash(f'Account created successfully!', category='success')
         return redirect(url_for('auth.admin'))
 
-     return render_template('adminsignup.html')
+     return render_template('/admin/adminsignup.html')
 
 
 @auth.route("/admin", methods=['GET', 'POST'])
@@ -157,7 +164,7 @@ def admin():
         else:
             flash('ID does not exist.', category='error')
 
-    return render_template("adminlogin.html", boolean=True)
+    return render_template("/admin/adminlogin.html", boolean=True)
 
 
 

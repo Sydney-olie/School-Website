@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
 
+
+
 load_dotenv()
 
 
@@ -15,6 +17,7 @@ def create_app():
     app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(os.path.dirname(__file__), "../instance", DB_NAME)}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
     
 
     from .views import views

@@ -5,22 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}My Website{% endblock %}</title>
   <link href="static/style.css" rel="stylesheet" >
+  
+  
 </head>
 <body>
-  <header>
-    <nav>
-    <ul>
-      
 
-      <li><a id="home" href="/">Home</a></li>
-      <li><a id="signUp" href="/signup">Sign Up</a></li>
-      <li><a id="login" href="/login">Login</a></li>
-      <li><a id="logout" href="/logout">Logout</a></li>
-      <li><a id="contact" href="/contact">Contact Us</a></li>
-        
-    </ul>
-    </nav>
-  </header>
+  
+   <div class="menu-icon">
+  <a href="/nav"><p>☰</p></a>
+   </div>
+
+    
+
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 {% for category, message in messages %}
@@ -59,7 +55,16 @@
     <a href="/contact">Contact</a>
     <a href="/privacypolicy">Privacy Policy</a>
   </div>
+  <div class="footer-links">
+    <br><br>
+    <p><b>Quick Links</b></p>
+    <p><a href="/nursery">Nursery</a></p>
+    <p><a href="/primary">Primary</a></p>
+    <p><a href="/secondary">Secondary</a></p>
+    <p><a href="/login">Login</a></p>
+  </div>
 </div>
+<br>
     <p> Website created by Chineye Olie &copy; 2025</p>
   </footer>
 </body>

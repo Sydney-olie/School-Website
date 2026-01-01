@@ -33,7 +33,7 @@ class Event(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text)
 
-class Calender(db.Model, UserMixin):
+class NoticeBoard(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     content= db.Column(db.Text)
     
@@ -52,6 +52,21 @@ class PaymentHistory(db.Model):
     term = db.Column(db.String(20))
     amount_paid = db.Column(db.Float)
     date_paid = db.Column(db.String(20))
+
+class Settings(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    amount_per_student = db.Column(db.Integer, nullable=False)
+
+class TermRevenue(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    term_name = db.Column(db.String(50), nullable=False)
+    session_year = db.Column(db.String(10), nullable=False)
+    amount_per_student = db.Column(db.Integer, nullable=False)
+    num_students = db.Column(db.Integer, nullable=False)
+    amount_expected = db.Column(db.Integer, nullable=False)
+    amount_collected = db.Column(db.Integer, nullable=False)
+    amount_remaining = db.Column(db.Integer, nullable=False)
+    date_closed = db.Column(db.DateTime, nullable=False)
 
 
 

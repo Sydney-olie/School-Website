@@ -2,12 +2,18 @@
 {% block title %}Make payment{% endblock %}
 
 {% block content %}
+<br><br>
+<h1>Make Payments</h1>
 <div class="form-box">
-<p><h1><strong>Make payment</strong></h1>
-  <p>  Bank: Palmpay Bank </p>
-   <p> Account Number: 9165191228</p>
-   <p> Account Name Holder: Chineye Olie</p>
-</p>
-</div>
+  <form action="/pay" method="POST">
+   <p><b>Account Details</b></p>
+   <hr>
+   <br>
+   <p><b>Bank:</b> Palmpay Bank</p>
+   <p><b>Account Number:</b> 9165191228</p>
+   <p><b>Name:</b> Olie Sydney Chineye</p>
+  </div>
+  <br><br>
 <p><strong>Notice: Contact the school authority immediately after payment is made</strong></p>
+  
 {% endblock content %}

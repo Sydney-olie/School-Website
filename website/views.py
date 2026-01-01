@@ -34,13 +34,13 @@ def about():
 def privacypolicy():
     return render_template('privacypolicy.html')
 
-@views.route('/student_dashboard')
-def student_dashboard():
-    return render_template('student_dashboard.html')
-
 @views.route('/logout')
 def logout():
     return render_template('home.html')
+
+@views.route('/nav')
+def nav():
+    return render_template('navigation.html')
 
 
 
