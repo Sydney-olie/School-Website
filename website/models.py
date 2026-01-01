@@ -17,17 +17,7 @@ class Admin(db.Model, UserMixin):
     admin_id = db.Column(db.String(20), nullable=False)
     admin_password = db.Column(db.String(100), nullable=False)
 
-class TimetableDay(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    day = db.Column(db.String(20), nullable=False)  # Monday, Tuesday...
-    entries = db.relationship('TimetableEntry', backref='day_obj', lazy=True, cascade="all, delete")
 
-class TimetableEntry(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    subject = db.Column(db.String(100), nullable=False)
-    start_time = db.Column(db.String(20), nullable=False)
-    end_time = db.Column(db.String(20), nullable=False)
-    day_id = db.Column(db.Integer, db.ForeignKey('timetable_day.id'), nullable=False)
 
 class Event(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
