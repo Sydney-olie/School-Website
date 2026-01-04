@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from datetime import datetime
 views = Blueprint('views', __name__)
 
 
@@ -45,6 +46,12 @@ def nav():
 @views.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@views.context_processor
+def inject_current_year():
+    return {'current_year':
+      datetime.now().year      
+            }
 
 
 
