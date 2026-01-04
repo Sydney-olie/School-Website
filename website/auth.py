@@ -102,7 +102,7 @@ def login():
     return render_template("login.html", boolean=True)
 
 
-ADMIN_SCHOOL_CODE="ADM789260"
+ADMIN_SCHOOL_CODE= os.getenv("ADMIN_SCHOOL_CODE")
 @auth.route('/adminsignup', methods=['GET', 'POST'])
 def adminsignup():
      if request.method == 'POST':

@@ -1,16 +1,11 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for, session
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from . import db
 from .models import User
 from .models import NoticeBoard
 from .models import Payment
 from datetime import datetime
-import os
-from dotenv import load_dotenv
-import requests
 
 
-
-load_dotenv()
 input = Blueprint('input', __name__)
 
 @input.route('/admindashboard')
