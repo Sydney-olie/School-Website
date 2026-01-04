@@ -42,5 +42,9 @@ def logout():
 def nav():
     return render_template('navigation.html')
 
+@views.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 
 
