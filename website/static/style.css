@@ -195,14 +195,25 @@ h1, p {
 /* School logo positioning */
 .logo {
   position: absolute;
-  top: 15px;
+  top: 5px;
   left: 15px;
   z-index: 2;
 }
 
 .logo img {
   height: 50px;
-  width: auto;
+  max-width: 120px;
+  width: 100%
+}
+@media (min-with: 300px) {
+  .logo img {
+    max-width: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .logo img {
+    max-width: 100px;
+  }
 }
 
 /* Overlay text styling */
@@ -211,13 +222,13 @@ h1, p {
   z-index: 2;
   text-align: center;
   color:white;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .overlay h1 {
   font-size: 34px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .overlay p {
